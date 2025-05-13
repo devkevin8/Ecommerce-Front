@@ -1,0 +1,96 @@
+/* src/components/FurnitureCard.css */
+.furniture-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Para que el borde redondeado afecte a la imagen */
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column; /* Apila imagen y contenido verticalmente */
+}
+
+.furniture-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.furniture-card-image-container {
+  width: 100%;
+  height: 200px; /* Altura fija para la imagen, ajusta según necesites */
+  overflow: hidden; /* Asegura que la imagen no se desborde */
+  position: relative; /* Para posicionar elementos sobre la imagen, como un badge */
+}
+
+.furniture-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cubre el espacio sin distorsionar la imagen */
+  display: block;
+  transition: transform 0.3s ease; /* Efecto de zoom sutil al pasar el ratón */
+}
+
+.furniture-card:hover .furniture-card-image {
+  transform: scale(1.05); /* Zoom ligero en la imagen al pasar el ratón por la card */
+}
+
+/* Ejemplo de badge de oferta (opcional) */
+/* .sale-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #d9534f;
+  color: white;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  border-radius: 4px;
+  text-transform: uppercase;
+} */
+
+.furniture-card-content {
+  padding: 15px;
+  text-align: left; /* O 'center' si prefieres */
+  flex-grow: 1; /* Permite que el contenido ocupe el espacio restante si las cards tienen alturas variables */
+}
+
+.furniture-card-name {
+  font-size: 1.1rem; /* Ajusta según tu diseño */
+  font-weight: 600;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 8px;
+  /* Limitar texto a 2 líneas con elipsis (opcional) */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 2.4em; /* Ajusta para que 2 líneas tengan espacio antes de cortar */
+}
+
+.furniture-card-price {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #334d6e; /* Azul oscuro como los botones del layout */
+  margin-bottom: 0;
+}
+
+/* Ejemplo de botón dentro de la card (opcional) */
+/* .details-button {
+  background-color: #334d6e;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  margin-top: 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85em;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.details-button:hover {
+  background-color: #263a53;
+} */

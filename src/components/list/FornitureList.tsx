@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import "./FornitureStyles.css";
 import type { FurnitureItem } from "../../interfaces/FornitureItem";
 import Modal from "../modal/modal";
+import FornitureCard from "../card/fornitureCard";
 
 const FurnitureList: React.FC<{
   title?: string;
   items: FurnitureItem[];
 }> = ({ title, items }) => {
+  // Estado para controlar la apertura y cierre del modal
   const [isModalOpen, setIsModalOpen] = useState(false);
   // Estado para guardar los datos del item seleccionado que se mostrará en el modal
   const [selectedItem, setSelectedItem] = useState<FurnitureItem | null>(null);
@@ -36,13 +38,11 @@ const FurnitureList: React.FC<{
       {title && <h2 className="furniture-list-title">{title}</h2>}
       <div className="furniture-grid">
         {items.map((item) => (
-          <div
-            key={item.id}
-            className="furniture-item"
-            onClick={() => handleItemClick(item)}
-          >
-            <img src={item.imageUrl} alt={item.name} />
-          </div>
+          <FornitureCard
+            key={item.imageUrl}
+            item={item}
+            onClick={handleItemClick} // Pasamos la función al hacer clic
+          />
         ))}
       </div>
       <Modal

@@ -20,26 +20,15 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, itemData }) => {
   return (
     // El overlay oscuro que cubre la pantalla
     <div className="modal-overlay" onClick={handleOverlayClick}>
-      {/* El contenedor del contenido del modal */}
       <div className="modal-content">
-        {/* Botón para cerrar */}
         <button className="modal-close-button" onClick={onClose}>
-          × {/* Símbolo de 'x' */}
         </button>
-
-        {/* Contenido del Modal */}
         <h2>{itemData.name}</h2>
         <img src={itemData.imageUrl} alt={itemData.name} className="modal-image" />
         <p className="modal-description">{itemData.description}</p>
         <p className="modal-price">
-          Precio: ${itemData.price.toLocaleString()} {/* Formato básico de precio */}
+          Precio: ${itemData.price.toLocaleString()}
         </p>
-        {/* Puedes añadir más detalles aquí */}
-        {/* <p>Categoría: {itemData.category}</p> */}
-        {/* <p>Dimensiones: ...</p> */}
-
-        {/* Puedes agregar botones de acción si lo necesitas */}
-        {/* <button>Añadir al carrito</button> */}
       </div>
     </div>
   );
