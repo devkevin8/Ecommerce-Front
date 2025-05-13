@@ -1,0 +1,93 @@
+/* src/components/Modal.css */
+
+.modal-overlay {
+  position: fixed; /* Se queda fijo en la pantalla */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+  display: flex;
+  align-items: center; /* Centrado vertical */
+  justify-content: center; /* Centrado horizontal */
+  z-index: 1000; /* Asegura que esté por encima de otro contenido */
+  opacity: 0; /* Inicialmente invisible para la animación */
+  visibility: hidden; /* Inicialmente oculto */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Transición suave */
+}
+
+/* Estilo cuando el modal está abierto (se podría manejar con clases en JS también) */
+/* Si usas el !isOpen en el componente, este CSS se aplica cuando el componente se renderiza */
+.modal-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.modal-content {
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 8px;
+  max-width: 600px; /* Ancho máximo */
+  width: 90%; /* Ancho en pantallas pequeñas */
+  max-height: 80vh; /* Altura máxima */
+  overflow-y: auto; /* Scroll si el contenido es muy largo */
+  position: relative; /* Para posicionar el botón de cierre */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transform: scale(0.9); /* Efecto inicial para animación */
+  transition: transform 0.3s ease;
+}
+
+/* Efecto cuando el modal está visible */
+.modal-overlay .modal-content {
+    transform: scale(1);
+}
+
+
+.modal-close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #555;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+}
+
+.modal-close-button:hover {
+  color: #000;
+}
+
+.modal-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 300px; /* Limita altura de la imagen */
+  display: block;
+  margin: 15px auto; /* Centrar imagen */
+  border-radius: 4px;
+  object-fit: cover; /* Para que la imagen cubra el espacio sin distorsionarse */
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333;
+  font-family: 'Lora', serif; /* Asumiendo que usas las fuentes anteriores */
+}
+
+.modal-description {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.modal-price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #334d6e; /* Azul oscuro como los botones */
+  margin-bottom: 10px;
+}

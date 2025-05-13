@@ -1,0 +1,208 @@
+/* Basic Reset & Font Import */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif; /* Sans-serif for body text */
+  color: #333;
+  background-color: #ffffff; /* White background */
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1300px; /* Adjust max width as needed */
+  margin: 0 auto;
+  padding: 0 15px; /* Add some padding on smaller screens */
+}
+
+/* Header Styles */
+header {
+  text-align: center;
+  padding: 40px 0 20px 0;
+}
+
+header h1 {
+  font-family: 'Lora', serif; /* Serif font for the main title */
+  font-size: 2.8em;
+  font-weight: 700;
+  color: #333; /* Dark grey */
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1em;
+  color: #666; /* Lighter grey for tagline */
+  max-width: 500px; /* Limit width of tagline */
+  margin: 0 auto; /* Center tagline */
+}
+
+/* Navigation Styles */
+nav {
+  text-align: center;
+  border-bottom: 1px solid #eee; /* Light grey bottom border */
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 18px; /* Spacing between nav items */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #555; /* Medium grey for links */
+  font-weight: 500;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #000; /* Darker on hover */
+}
+
+nav ul li a.ofertas {
+  color: #d9534f; /* Reddish color for offers */
+  font-weight: 600;
+}
+
+/* Action Buttons Styles */
+.action-buttons {
+  text-align: center;
+  margin-bottom: 40px; /* Space below buttons */
+}
+
+.action-buttons button {
+  background-color: #334d6e; /* Dark blue-grey */
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  margin: 0 10px;
+  border-radius: 20px; /* Pill shape */
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.action-buttons button:hover {
+  background-color: #263a53; /* Darker blue-grey on hover */
+}
+
+/* Featured Product Section */
+.featured-product {
+  margin-bottom: 50px; /* Space below featured image */
+}
+
+.featured-product img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto; /* Center image */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+/* Similar Section Styles */
+.similar-section {
+  margin-bottom: 50px;
+}
+
+.similar-section h2 {
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #444;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 20px; /* Space between thumbnails */
+  justify-content: space-between; /* Distribute space */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.thumbnail-item {
+  flex-basis: calc(33.333% - 14px); /* Adjust basis for 3 items considering gap */
+  min-width: 250px; /* Minimum width before wrapping */
+}
+
+.thumbnail-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Rounded corners for thumbnails */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive Adjustments (Example) */
+@media (max-width: 992px) {
+  .thumbnail-item {
+      flex-basis: calc(50% - 10px); /* 2 items per row */
+  }
+  header h1 {
+      font-size: 2.4em;
+  }
+  nav ul li {
+      margin: 0 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  header h1 {
+      font-size: 2em;
+  }
+  header p {
+      font-size: 0.9em;
+  }
+  nav ul li {
+      margin: 5px 10px; /* Add vertical margin for potential wrapping */
+  }
+  .action-buttons button {
+      padding: 8px 20px;
+      font-size: 0.85em;
+      margin: 5px;
+  }
+  .thumbnails {
+      justify-content: center; /* Center items when they wrap */
+  }
+  .thumbnail-item {
+      flex-basis: calc(50% - 10px);
+      min-width: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  nav ul li {
+      display: block; /* Stack nav items */
+      margin: 8px 0;
+  }
+  .action-buttons button {
+      display: block;
+      width: 80%;
+      margin: 10px auto; /* Stack buttons */
+  }
+  .thumbnail-item {
+      flex-basis: 100%; /* 1 item per row */
+      min-width: unset;
+      max-width: 350px; /* Limit width on small screens */
+      margin-left: auto;
+      margin-right: auto;
+  }
+  .similar-section h2 {
+      text-align: center;
+  }
+}
